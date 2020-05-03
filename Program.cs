@@ -6,6 +6,8 @@ namespace ProjectEuler_4
     {
         static void Main(string[] args)
         {
+            int sayi1 = 0;
+            int sayi2 = 0;
             int a;
             int yuzbinlik;
             int onbinlik;
@@ -13,10 +15,12 @@ namespace ProjectEuler_4
             int yuzluk;
             int onluk;
             int birlik;
+            int sonuc1 = 0;
+            int sonuc2 = 0;
 
-            for (int sayi1 = 100; sayi1 <= 999; sayi1++)
+            for (sayi1 = 100; sayi1 <= 999; sayi1++)
             {
-                for (int sayi2 = 100; sayi2 <= 999; sayi2++)
+                for (sayi2 = 100; sayi2 <= 999; sayi2++)
                 {
                     a = sayi1 * sayi2;
 
@@ -32,18 +36,20 @@ namespace ProjectEuler_4
                     a = a - (10 * onluk);
                     birlik = a / 1;
 
-                    if ( birlik == yuzbinlik && onluk == onbinlik && yuzluk == binlik)
+                    if (birlik == yuzbinlik && onluk == onbinlik && yuzluk == binlik)
                     {
-                        Console.WriteLine(sayi1 + " x " + sayi2 + " = " + sayi1*sayi2);
+                        sonuc1 = sayi1 * sayi2;
+                        if (sonuc1 > sonuc2)
+                        {
+
+                            Console.WriteLine(sayi1 + " X " + sayi2 + " = " + sonuc1 + " > " + sonuc2);
+                            sonuc2 = sonuc1;
+                        }
                     }
-
                 }
-
             }
-
-
-
-
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("SONUÇ : " + sonuc2);
         }
     }
 }
